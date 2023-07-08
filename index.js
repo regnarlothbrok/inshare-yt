@@ -107,7 +107,7 @@ const updateProgress = (e) => {
 
 }
 
-const onUploadSuccess = ({file: url}) => {
+const onFileUploadSuccess = ({file: url}) => {
       console.log(e)
       resetFileInput()
       emailForm[2].removeAttribute("disabled")
