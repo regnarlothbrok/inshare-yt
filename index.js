@@ -70,7 +70,7 @@ const uploadFile =()=> {
         showToast("Upload only 1 file!")
         return;
     }
-    if(files.size >maxAllowedSize ) {
+    if(file.size >maxAllowedSize ) {
         resetFileInput()
         showToast("Can't upload more than 100MB")
         return;
