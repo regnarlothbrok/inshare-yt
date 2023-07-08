@@ -64,18 +64,18 @@ copyBtn.addEventListener("click", () => {
 })
 const uploadFile =()=> {
 
+    const file = fileinput.files[0];
     if(fileinput.files>1) {
        resetFileInput()
         showToast("Upload only 1 file!")
         return;
     }
-    if(file.size >maxAllowedSize ) {
+    if(files.size >maxAllowedSize ) {
         resetFileInput()
         showToast("Can't upload more than 100MB")
         return;
     }
     progressContainer.style.display = "block";
-    const file = fileinput.files[0];
     const formData = new FormData();
     formData.append("myfile",file);
 
