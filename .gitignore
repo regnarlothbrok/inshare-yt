@@ -2,3 +2,5 @@
 uploads/*
 !uploads/.gitkeep
 node_modules
+index.js
+style.css
