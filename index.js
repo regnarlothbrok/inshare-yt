@@ -79,6 +79,15 @@ const uploadFile = () => {
     formData.append("myfile", file);
 
     const xhr = new XMLHttpRequest();
+
+    xhr.upload.onprogress = function (e) {
+        const percent = Math.round((e.loaded / e.total) * 100);
+        //  console.log(percent);
+        bgProgress.style.width = `${percent}%`
+        percentDiv.innerText = percent;
+        progressBar.style.transform = `scaleX(${percent / 100}/)`
+    
+    }
     //
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -97,14 +106,6 @@ const uploadFile = () => {
     xhr.send(formData)
 };
 
-const updateProgress = (e) => {
-    const percent = Math.round((e.loaded / e.total) * 100);
-    //  console.log(percent);
-    bgProgress.style.width = `${percent}%`
-    percentDiv.innerText = percent;
-    progressBar.style.transform = `scaleX(${percent / 100}/)`
-
-}
 
 const onFileUploadSuccess = ({ file: url }) => {
     console.log(e)
