@@ -80,14 +80,14 @@ const uploadFile = () => {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.upload.onprogress = function (e) {
-        const percent = Math.round((e.loaded / e.total) * 100);
-        //  console.log(percent);
-        bgProgress.style.width = `${percent}%`
-        percentDiv.innerText = percent;
-        progressBar.style.transform = `scaleX(${percent / 100}/)`
-    
-    }
+    xhr.upload.onprogress = function (event) {
+        // find the percentage of uploaded
+        let percent = Math.round((100 * event.loaded) / event.total);
+        progressPercent.innerText = percent;
+        const scaleX = `scaleX(${percent / 100})`;
+        bgProgress.style.transform = scaleX;
+        progressBar.style.transform = scaleX;
+      };
     //
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
