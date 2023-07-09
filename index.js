@@ -11,7 +11,7 @@ const copyBtn = document.querySelector('#copyBtn')
 const emailForm = document.querySelector('#emailForm')
 const toast = document.querySelector('.toast')
 
-const host = "http://localhost:5000"
+const host = "http://localhost:3000"
 const uploadURL = `${host}api/files`;
 const emailURL = `${host}api/files/send`;
 // const uploadURL = `${host}api/files`;
@@ -86,7 +86,7 @@ const uploadFile = () => {
         }
     }
 
-    xhr.upload.onpgrograss = updateProgress;
+    xhr.upload.onpgrogress = updateProgress;
     xhr.upload.onerror = () => {
         resetFileInput()
         showToast(`Error in upload: ${xhr.statusText}`)
