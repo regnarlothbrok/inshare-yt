@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const connectDB = require('./config/db')
 const path = require('path')
+const cors = require('cors')
 connectDB();
 
 //Cors
@@ -11,6 +12,7 @@ const corsOptions = {
     // ['http:localhost:3000', 'http....5000']
 }
 
+app.use(cors(corsOptions));
 app.use(express.static('public'));
 app.use(express.json());
 //Templates engine
