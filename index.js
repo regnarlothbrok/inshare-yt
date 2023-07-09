@@ -93,7 +93,7 @@ const uploadFile = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log(xhr.responseText); // Check the response text
             try {
-                const response = JSON.parse(xhr.responseText); // Parse the response as JSON
+                const response = JSON(xhr.responseText); // Parse the response as JSON
                 console.log(response); // Check the parsed JSON object
                 onFileUploadSuccess(response);
             } catch (error) {
@@ -114,7 +114,7 @@ const uploadFile = () => {
 
 
 const onFileUploadSuccess = ({ file: url }) => {
-    console.log(e)
+   
     resetFileInput()
     emailForm[2].removeAttribute("disabled")
 
