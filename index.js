@@ -91,8 +91,14 @@ const uploadFile = () => {
     //
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            console.log(xhr.response);
-            onFileUploadSuccess(JSON.parse(xhr.responseText));
+            console.log(xhr.responseText); // Check the response text
+            try {
+                const response = JSON.parse(xhr.responseText); // Parse the response as JSON
+                console.log(response); // Check the parsed JSON object
+                onFileUploadSuccess(response);
+            } catch (error) {
+                console.error(error); // Log any parsing errors
+            }
         }
     }
 
