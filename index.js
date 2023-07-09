@@ -87,7 +87,7 @@ const uploadFile = () => {
         const scaleX = `scaleX(${percent / 100})`;
         bgProgress.style.transform = scaleX;
         progressBar.style.transform = scaleX;
-      };
+    };
     //
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
