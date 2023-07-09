@@ -11,7 +11,7 @@ const copyBtn = document.querySelector('#copyBtn')
 const emailForm = document.querySelector('#emailForm')
 const toast = document.querySelector('.toast')
 
-const host = "https://coruscating-elf-04359a.netlify.app/"
+const host = "http://localhost:5000"
 const uploadURL = `${host}api/files`;
 const emailURL = `${host}api/files/send`;
 // const uploadURL = `${host}api/files`;
