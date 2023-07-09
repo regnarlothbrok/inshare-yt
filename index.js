@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const dropZone = document.querySelector(".drop-zone")
 const fileinput = document.querySelector("#fileinput");
 const browsebtn = document.querySelector(".browsebtn")
@@ -154,3 +155,4 @@ const showToast = (msg) => {
         toast.style.transform = "translate(-50%,60px)"
     }, 2000);
 }
+});
